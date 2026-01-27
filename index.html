@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
 
+<!-- GOOGLE VERIFICATION -->
 <meta name="google-site-verification" content="KSkGueGopsJXf-LAmatVtZkD-1llvKo66gPh10fESfU" />
+
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
@@ -45,7 +47,6 @@ body{background:#f4f4f4;color:#333}
 
 nav{position:sticky;top:0;z-index:1000;background:#fff;display:flex;justify-content:space-between;align-items:center;padding:12px 22px;box-shadow:0 3px 12px rgba(0,0,0,.1)}
 nav img{height:52px;border-radius:10px}
-nav a{margin-left:20px;text-decoration:none;color:#111;font-weight:500}
 
 header{background:#8b1c1c;color:#fff;text-align:center;padding:35px 15px}
 header img{width:130px;background:#fff;padding:10px;border-radius:12px}
@@ -72,25 +73,17 @@ button{width:100%;padding:14px;border:none;border-radius:10px;background:#25D366
 
 iframe{width:100%;height:300px;border:none;border-radius:12px}
 footer{background:#8b1c1c;color:#fff;text-align:center;padding:15px}
-
-.mobile-bar{position:fixed;bottom:0;left:0;width:100%;background:#8b1c1c;color:#fff;display:flex;justify-content:space-around;padding:10px 0;z-index:1000}
-.mobile-bar a{color:#fff;text-decoration:none;font-weight:600}
-@media(min-width:768px){.mobile-bar{display:none}}
 </style>
 </head>
 
 <body>
 
 <nav>
- <img src="logo.png" alt="Syed’s Challenging Tuition Logo">
- <div>
-  <a href="#courses">Courses</a>
-  <a href="#contact">Contact</a>
- </div>
+ <img src="logo.png">
 </nav>
 
 <header>
- <img src="logo.png" alt="Syed’s Challenging Tuition Logo">
+ <img src="logo.png">
  <h1>Syed’s Challenging Tuition</h1>
  <p>Even a laziest student can get good results</p>
 </header>
@@ -102,10 +95,10 @@ footer{background:#8b1c1c;color:#fff;text-align:center;padding:15px}
 </div>
 
 <div class="notice">
- <marquee id="noticeText">🔔 Admissions Open for 2026–27</marquee>
+ <marquee id="noticeText">Loading notifications...</marquee>
 </div>
 
-<div class="section" id="courses">
+<div class="section">
 <h2>Courses Offered</h2>
 <ul>
 <li>Primary (1st – 5th)</li>
@@ -113,6 +106,11 @@ footer{background:#8b1c1c;color:#fff;text-align:center;padding:15px}
 <li>PUC Science</li>
 <li>JEE / NEET</li>
 </ul>
+</div>
+
+<div class="section">
+<h2>Class Timetable</h2>
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT5Q70dMD4T3tpgGdYCMRVrjrIDPIcDsU8AH9IKHTLT6dcOyjePX2dp8fXkX5uA0nBluOkuaW-7S41Q/pubhtml"></iframe>
 </div>
 
 <div class="section">
@@ -141,32 +139,13 @@ footer{background:#8b1c1c;color:#fff;text-align:center;padding:15px}
 <h2>Student Reviews</h2>
 <div class="review-slider">
 <div class="review-track" id="reviewTrack">
-<!-- Fallback static reviews -->
 <div class="review">
- <h4>Rohit Sharma</h4>
- <div class="stars">⭐⭐⭐⭐⭐</div>
- <p>Best tuition center in Bangalore. Excellent teaching.</p>
-</div>
-<div class="review">
- <h4>Ayesha Khan</h4>
- <div class="stars">⭐⭐⭐⭐⭐</div>
- <p>My son improved a lot in Maths & Science.</p>
-</div>
-<div class="review">
- <h4>Imran Ali</h4>
- <div class="stars">⭐⭐⭐⭐⭐</div>
- <p>Highly recommended for PUC Science students.</p>
+<h4>Rohit Sharma</h4>
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<p>Excellent teaching and great results.</p>
 </div>
 </div>
 </div>
-</div>
-
-<div class="section" id="contact">
-<h2>Online Inquiry</h2>
-<input id="inqName" placeholder="Your Name">
-<input id="inqPhone" placeholder="Phone Number">
-<textarea id="inqMsg" placeholder="Message"></textarea>
-<button onclick="sendInquiry()">Send on WhatsApp</button>
 </div>
 
 <div class="section">
@@ -177,30 +156,31 @@ footer{background:#8b1c1c;color:#fff;text-align:center;padding:15px}
 <footer>© 2026 Syed’s Challenging Tuition Center</footer>
 
 <script>
+const NOTICE_SHEET="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9-v1cam9L1DaRbBrdoT-VzJvsJtWy6_aUH_lrna3KA3FMG2kd9C4DscxEqjTpMtnz3WzIxh5xp4TE/pub?output=csv";
 const REVIEWS_SHEET="https://docs.google.com/spreadsheets/d/e/2PACX-1vTXfT8B5Jo58GMQ4IXUdd2e0ws3zRo94oMrRqMYx6BKRgvdzhBaCnIuTu5tksMb-OqhAkAWjPO9aXtK/pub?output=csv";
 
-function loadReviewsSafe(){
- fetch(REVIEWS_SHEET)
- .then(r=>r.text())
- .then(t=>{
-  let rows=t.trim().split("\\n").slice(1);
-  if(!rows.length) return;
+function loadNotifications(){
+ fetch(NOTICE_SHEET).then(r=>r.text()).then(t=>{
+  let rows=t.trim().split("\n").slice(1);
+  document.getElementById("noticeText").innerText=
+   rows.length ? rows.map(r=>"🔔 "+r.replace(/\"/g,"")).join(" | ") :
+   "🔔 Admissions Open for 2026–27";
+ });
+}
 
-  let html=rows.map(r=>{
+function loadReviewsSafe(){
+ fetch(REVIEWS_SHEET).then(r=>r.text()).then(t=>{
+  let rows=t.trim().split("\n").slice(1);
+  if(!rows.length) return;
+  document.getElementById("reviewTrack").innerHTML=rows.map(r=>{
    let c=r.replace(/\"/g,"").split(",");
    return `<div class="review">
-    <h4>${c[0]||"Parent"}</h4>
-    <div class="stars">${"⭐".repeat(parseInt(c[1]||5))}</div>
-    <p>${c[2]||""}</p>
-   </div>`;
+   <h4>${c[0]||"Parent"}</h4>
+   <div class="stars">${"⭐".repeat(parseInt(c[1]||5))}</div>
+   <p>${c[2]||""}</p></div>`;
   }).join("");
-
-  if(html.trim()){
-   document.getElementById("reviewTrack").innerHTML=html;
-   startReviewSlider();
-  }
- })
- .catch(()=>console.log("Live reviews failed, using fallback"));
+  startReviewSlider();
+ });
 }
 
 function makeSlider(id, interval){
@@ -225,16 +205,11 @@ function startReviewSlider(){
  },4000);
 }
 
-function sendInquiry(){
- let t=`Hello Syed Sir 👋\nName:${inqName.value}\nPhone:${inqPhone.value}\n${inqMsg.value}`;
- window.open("https://wa.me/918660202093?text="+encodeURIComponent(t));
-}
-
 document.addEventListener("DOMContentLoaded",()=>{
+ loadNotifications();
+ loadReviewsSafe();
  makeSlider("classroomSlider",3000);
  makeSlider("resultsSlider",3500);
- startReviewSlider();
- loadReviewsSafe();
 });
 </script>
 
