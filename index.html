@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+8<!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -22,62 +22,62 @@
 <meta property="og:url" content="https://uzzu008-ops.github.io/syedschallengingtuitions/">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins}
 body{background:#f4f4f4}
 html{scroll-behavior:smooth}
- /* FIX RESULTS SIZE */
+/* RESULTS SLIDER FIX */
+#resultsSlider {
+  overflow: hidden;
+}
+
 #resultsSlider .slider-track {
-  align-items: center;
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease;
 }
 
 #resultsSlider img {
   width: 100%;
-  max-width: 420px;     /* controls poster width */
+  max-width: 650px;   /* BIG on desktop */
   height: auto;
-  margin: 0 auto;
-  display: block;
+  border-radius: 12px;
+  flex-shrink: 0;
 }
  /* FLOATING SOCIAL BUTTONS */
+/* FLOATING SOCIAL FIX */
 .floating-social {
   position: fixed;
-  right: 18px;
-  bottom: 18px;
-  z-index: 9999;
+  right: 20px;
+  bottom: 20px;
+  z-index: 99999; /* FORCE ON TOP */
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .floating-social a {
-  width: 54px;
-  height: 54px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
-  color: #fff;
-  font-size: 26px;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #fff;
+  font-size: 28px;
+  box-shadow: 0 6px 16px rgba(0,0,0,.3);
   text-decoration: none;
-  box-shadow: 0 6px 15px rgba(0,0,0,.25);
-  transition: transform .2s;
 }
 
-.floating-social a:hover {
-  transform: scale(1.08);
-}
-
-/* WhatsApp */
 .float-whatsapp {
   background: #25D366;
 }
 
-/* Instagram */
 .float-instagram {
   background: radial-gradient(circle at 30% 110%,
-    #fdf497 0%, #fdf497 5%, #fd5949 45%,
-    #d6249f 60%, #285AEB 90%);
+    #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
 }
 
 nav{
