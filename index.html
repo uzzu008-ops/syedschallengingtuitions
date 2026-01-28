@@ -27,6 +27,18 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins}
 body{background:#f4f4f4}
 html{scroll-behavior:smooth}
+ /* FIX RESULTS SIZE */
+#resultsSlider .slider-track {
+  align-items: center;
+}
+
+#resultsSlider img {
+  width: 100%;
+  max-width: 420px;     /* controls poster width */
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
 
 nav{
  background:#fff;
@@ -194,13 +206,15 @@ footer{
 <!-- RESULTS -->
 <div class="section">
 <h2>Our Results</h2>
+
 <div class="slider" id="resultsSlider">
-<div class="slider-track">
- <img src="result1.jpg">
- <img src="result2.jpg">
- <img src="result3.jpg">
+  <div class="slider-track">
+    <img src="result1.jpg" alt="PUC Result">
+    <img src="result2.jpg" alt="PUC Result">
+    <img src="result3.jpg" alt="PUC Result">
+  </div>
 </div>
-</div>
+
 </div>
 
 <!-- REVIEWS -->
