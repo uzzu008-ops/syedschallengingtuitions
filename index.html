@@ -9,14 +9,9 @@
 <meta name="description" content="Syed’s Challenging Tuition Center in Bangalore for 1st–10th, PUC Science, JEE & NEET. Call 8660202093">
 <meta name="keywords" content="tuition Bangalore, PUC tuition, JEE coaching, NEET coaching">
 <meta name="author" content="Syed’s Challenging Tuition Center">
-
 <meta name="google-site-verification" content="KSkGueGopsJXf-LAmatVtZkD-1llvKo66gPh10fESfU">
-<link rel="sitemap" type="application/xml" href="https://uzzu008-ops.github.io/syedschallengingtuitions/sitemap.xml">
 
-<meta property="og:title" content="Syed’s Challenging Tuition">
-<meta property="og:description" content="Best tuition center in Bangalore">
-<meta property="og:image" content="https://uzzu008-ops.github.io/syedschallengingtuitions/logo.png">
-<meta property="og:url" content="https://uzzu008-ops.github.io/syedschallengingtuitions/">
+<link rel="sitemap" type="application/xml" href="https://uzzu008-ops.github.io/syedschallengingtuitions/sitemap.xml">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -33,26 +28,26 @@ nav{
  display:flex;
  justify-content:space-between;
  align-items:center;
- box-shadow:0 4px 14px rgba(0,0,0,.08);
+ box-shadow:0 3px 10px rgba(0,0,0,.1);
  position:sticky;
  top:0;
  z-index:1000
 }
-nav img{height:50px}
+nav img{height:52px}
 nav a{text-decoration:none;margin-left:20px;color:#111;font-weight:600}
 
 /* HEADER */
 header{
- background:linear-gradient(135deg,#8b1c1c,#a32626);
+ background:#8b1c1c;
  color:#fff;
  text-align:center;
  padding:40px 20px
 }
 header img{
- width:130px;
+ width:140px;
  background:#fff;
  padding:10px;
- border-radius:12px;
+ border-radius:14px;
  margin-bottom:10px
 }
 
@@ -60,18 +55,17 @@ header img{
 .notice{
  background:#ffeb3b;
  padding:12px;
- font-weight:600;
- box-shadow:0 2px 8px rgba(0,0,0,.15)
+ font-weight:600
 }
 
 /* SECTION */
 .section{
  background:#fff;
- margin:25px auto;
- padding:30px;
+ margin:24px auto;
+ padding:28px;
  max-width:1100px;
  border-radius:16px;
- box-shadow:0 10px 25px rgba(0,0,0,.08)
+ box-shadow:0 8px 20px rgba(0,0,0,.12)
 }
 .section h2{
  text-align:center;
@@ -79,39 +73,41 @@ header img{
  margin-bottom:20px
 }
 
-/* SLIDER */
-.slider{overflow:hidden;width:100%}
+/* SLIDER FIX (BIG RESULTS) */
+.slider{
+ overflow:hidden;
+ width:100%
+}
 .slider-track{
  display:flex;
- transition:transform .6s cubic-bezier(.4,0,.2,1)
+ transition:.6s ease
 }
 .slider img{
  width:100%;
- max-width:1100px;
- height:auto;
+ height:420px;
  object-fit:cover;
  flex-shrink:0;
- border-radius:14px
+ border-radius:16px
+}
+@media(max-width:768px){
+ .slider img{height:240px}
 }
 
 /* REVIEWS */
 .review-track{
  display:flex;
- gap:18px;
+ gap:16px;
  overflow-x:auto;
- scroll-snap-type:x mandatory;
- padding-bottom:10px
+ scroll-snap-type:x mandatory
 }
 .review{
  min-width:300px;
  background:#fff;
- padding:18px;
+ padding:16px;
  border-radius:14px;
- box-shadow:0 6px 16px rgba(0,0,0,.12);
+ box-shadow:0 4px 12px rgba(0,0,0,.15);
  scroll-snap-align:start
 }
-.review b{display:block;margin-bottom:6px}
-.review .stars{color:#fbc02d;margin-bottom:6px}
 
 /* FORM */
 input,textarea{
@@ -119,36 +115,25 @@ input,textarea{
  padding:14px;
  margin-bottom:12px;
  border-radius:10px;
- border:1px solid #ccc;
- font-size:15px
+ border:1px solid #ccc
 }
 button{
  background:#25D366;
  color:#fff;
  border:none;
- padding:15px;
+ padding:16px;
  width:100%;
  border-radius:12px;
- font-size:17px;
- font-weight:600;
+ font-size:16px;
  cursor:pointer
 }
-button:hover{opacity:.9}
 
 /* MAP */
 iframe{
  width:100%;
  height:340px;
  border:none;
- border-radius:14px
-}
-
-/* FOOTER */
-footer{
- background:#8b1c1c;
- color:#fff;
- text-align:center;
- padding:16px
+ border-radius:16px
 }
 
 /* FLOATING SOCIAL */
@@ -177,6 +162,26 @@ footer{
  background:radial-gradient(circle at 30% 110%,
  #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%)
 }
+
+/* ADMISSION POPUP */
+#adPopup{
+ position:fixed;
+ inset:0;
+ background:rgba(0,0,0,.65);
+ display:none;
+ align-items:center;
+ justify-content:center;
+ z-index:999999
+}
+#adPopup .box{
+ background:#fff;
+ padding:30px;
+ max-width:360px;
+ text-align:center;
+ border-radius:16px
+}
+#adPopup h3{color:#8b1c1c;margin-bottom:10px}
+#adPopup button{margin-top:10px}
 </style>
 </head>
 
@@ -248,7 +253,7 @@ footer{
 <input id="inqName" placeholder="Name">
 <input id="inqPhone" placeholder="Phone">
 <textarea id="inqMsg" placeholder="Message"></textarea>
-<button onclick="sendInquiry()">📲 Send on WhatsApp</button>
+<button onclick="sendInquiry()">Send on WhatsApp</button>
 </div>
 
 <div class="section">
@@ -259,10 +264,17 @@ footer{
 <footer>© 2026 Syed’s Challenging Tuition Center</footer>
 
 <div class="floating-social">
-<a class="whatsapp" href="https://wa.me/918660202093" target="_blank">
-<i class="fab fa-whatsapp"></i></a>
-<a class="instagram" href="https://instagram.com/" target="_blank">
-<i class="fab fa-instagram"></i></a>
+<a class="whatsapp" href="https://wa.me/918660202093" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a class="instagram" href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+</div>
+
+<!-- ADMISSION POPUP -->
+<div id="adPopup">
+<div class="box">
+<h3>Admissions Open 🎓</h3>
+<p>Limited seats for 2026 batch.<br>Call or WhatsApp now!</p>
+<button onclick="closePopup()">Close</button>
+</div>
 </div>
 
 <script>
@@ -278,26 +290,15 @@ fetch(REVIEWS_SHEET).then(r=>r.text()).then(t=>{
  let rows=t.split("\n").slice(1);
  reviewTrack.innerHTML=rows.map(r=>{
  let c=r.split(",");
- return `<div class="review">
- <b>${c[0]}</b>
- <div class="stars">★★★★★</div>
- <p>${c[2]}</p>
- </div>`;
+ return `<div class="review"><b>${c[0]}</b><p>${c[2]}</p></div>`;
  }).join("");
 });
 
 function slider(id,delay){
  const track=document.querySelector(`#${id} .slider-track`);
  let i=0;
- let timer=setInterval(run,delay);
-
- function run(){
-  i=(i+1)%track.children.length;
-  track.style.transform=`translateX(-${i*100}%)`;
- }
-
- track.addEventListener("mouseenter",()=>clearInterval(timer));
- track.addEventListener("mouseleave",()=>timer=setInterval(run,delay));
+ setInterval(()=>{i=(i+1)%track.children.length;
+ track.style.transform=`translateX(-${i*100}%)`},delay);
 }
 slider("classroomSlider",3000);
 slider("resultsSlider",3500);
@@ -306,6 +307,9 @@ function sendInquiry(){
  let t=`Hello Syed Sir\nName:${inqName.value}\nPhone:${inqPhone.value}\n${inqMsg.value}`;
  window.open("https://wa.me/918660202093?text="+encodeURIComponent(t));
 }
+
+setTimeout(()=>{ if(!localStorage.popup){adPopup.style.display="flex";localStorage.popup=1}},2000);
+function closePopup(){adPopup.style.display="none"}
 </script>
 
 </body>
