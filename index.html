@@ -7,25 +7,20 @@
 <title>Syed’s Challenging Tuition | Best Tuition Center in Bangalore</title>
 
 <meta name="description" content="Syed’s Challenging Tuition Center in Bangalore for 1st–10th, PUC Science, JEE & NEET. Call 8660202093">
-<meta name="keywords" content="tuition Bangalore, PUC tuition, JEE coaching, NEET coaching, online tuition">
+<meta name="keywords" content="tuition Bangalore, PUC tuition, JEE coaching, NEET coaching">
 <meta name="author" content="Syed’s Challenging Tuition Center">
 
 <meta name="google-site-verification" content="KSkGueGopsJXf-LAmatVtZkD-1llvKo66gPh10fESfU">
 
 <link rel="sitemap" type="application/xml" href="https://uzzu008-ops.github.io/syedschallengingtuitions/sitemap.xml">
 
-<meta property="og:title" content="Syed’s Challenging Tuition">
-<meta property="og:description" content="Best tuition center in Bangalore">
-<meta property="og:image" content="https://uzzu008-ops.github.io/syedschallengingtuitions/logo.png">
-<meta property="og:url" content="https://uzzu008-ops.github.io/syedschallengingtuitions/">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins}
-html{scroll-behavior:smooth}
 body{background:#f4f4f4}
+html{scroll-behavior:smooth}
 
 /* NAV */
 nav{
@@ -47,88 +42,93 @@ header{
  background:#8b1c1c;
  color:#fff;
  text-align:center;
- padding:45px 20px;
-}
-.hero{
- animation:heroFade 1.2s ease forwards;
- opacity:0;
- transform:translateY(20px);
-}
-@keyframes heroFade{
- to{opacity:1;transform:translateY(0)}
+ padding:40px 20px
 }
 header img{
- width:130px;
+ width:140px;
  background:#fff;
  padding:10px;
  border-radius:12px;
- margin-bottom:10px;
+ animation:fadeDown 1s ease
+}
+header h1{margin-top:10px;font-size:32px}
+header p{opacity:.9}
+
+@keyframes fadeDown{
+ from{opacity:0;transform:translateY(-20px)}
+ to{opacity:1;transform:translateY(0)}
 }
 
 /* NOTICE */
-.notice{background:#ffeb3b;padding:12px;font-weight:600}
+.notice{
+ background:#ffeb3b;
+ padding:12px;
+ font-weight:600
+}
 
 /* SECTIONS */
 .section{
  background:#fff;
- margin:22px auto;
- padding:25px;
+ margin:25px auto;
+ padding:30px;
  max-width:1100px;
- border-radius:14px;
+ border-radius:16px;
  box-shadow:0 6px 15px rgba(0,0,0,.1)
 }
-.section h2{text-align:center;color:#8b1c1c;margin-bottom:18px}
+.section h2{
+ text-align:center;
+ color:#8b1c1c;
+ margin-bottom:20px
+}
 
-/* COURSES – UNIQUE CARDS */
-.courses{
+/* COURSE CARDS */
+.course-grid{
  display:grid;
  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
- gap:18px;
+ gap:20px
 }
 .course{
- background:#f9f9f9;
+ background:#fafafa;
  padding:20px;
  border-radius:14px;
  text-align:center;
- box-shadow:0 4px 10px rgba(0,0,0,.1);
- transition:.3s;
+ box-shadow:0 4px 12px rgba(0,0,0,.08);
+ transition:.3s
 }
 .course:hover{transform:translateY(-6px)}
-.course i{
- font-size:34px;
- color:#8b1c1c;
- margin-bottom:10px;
-}
+.course i{font-size:30px;color:#8b1c1c;margin-bottom:10px}
 
 /* SLIDERS */
-.slider{overflow:hidden;width:100%}
-.slider-track{display:flex;transition:.5s ease}
+.slider{overflow:hidden}
+.slider-track{
+ display:flex;
+ transition:.6s ease
+}
 .slider img{
  width:100%;
  max-width:1100px;
- height:420px;
+ height:380px;
  object-fit:cover;
  flex-shrink:0;
- border-radius:12px
+ border-radius:14px
 }
 @media(max-width:768px){
  .slider img{height:240px}
 }
 
 /* REVIEWS */
+.review-slider{overflow:hidden}
 .review-track{
  display:flex;
  gap:15px;
- overflow-x:auto;
- scroll-snap-type:x mandatory
+ transition:.6s ease
 }
 .review{
  min-width:280px;
  background:#fff;
- padding:15px;
- border-radius:12px;
- box-shadow:0 4px 10px rgba(0,0,0,.15);
- scroll-snap-align:start
+ padding:16px;
+ border-radius:14px;
+ box-shadow:0 4px 10px rgba(0,0,0,.15)
 }
 
 /* FORM */
@@ -150,22 +150,32 @@ button{
 }
 
 /* MAP */
-iframe{width:100%;height:320px;border:none;border-radius:12px}
+iframe{
+ width:100%;
+ height:320px;
+ border:none;
+ border-radius:14px
+}
 
 /* FOOTER */
-footer{background:#8b1c1c;color:#fff;text-align:center;padding:14px}
+footer{
+ background:#8b1c1c;
+ color:#fff;
+ text-align:center;
+ padding:15px
+}
 
 /* FLOATING BUTTONS */
-.floating-social{
+.floating{
  position:fixed;
- right:20px;
- bottom:20px;
+ right:18px;
+ bottom:18px;
  display:flex;
  flex-direction:column;
  gap:14px;
- z-index:99999
+ z-index:9999
 }
-.floating-social a{
+.floating a{
  width:56px;height:56px;
  border-radius:50%;
  display:flex;
@@ -173,19 +183,20 @@ footer{background:#8b1c1c;color:#fff;text-align:center;padding:14px}
  justify-content:center;
  color:#fff;
  font-size:26px;
- box-shadow:0 6px 16px rgba(0,0,0,.3);
- animation:pulse 2s infinite;
-}
-@keyframes pulse{
- 0%{transform:scale(1)}
- 50%{transform:scale(1.1)}
- 100%{transform:scale(1)}
+ box-shadow:0 6px 16px rgba(0,0,0,.3)
 }
 .whatsapp{background:#25D366}
-.phone{background:#1976d2}
 .instagram{
  background:radial-gradient(circle at 30% 110%,
  #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%)
+}
+.call{background:#1976d2;animation:ring 1.5s infinite}
+@keyframes ring{
+ 0%{transform:rotate(0)}
+ 10%{transform:rotate(10deg)}
+ 20%{transform:rotate(-10deg)}
+ 30%{transform:rotate(10deg)}
+ 40%{transform:rotate(0)}
 }
 </style>
 </head>
@@ -193,69 +204,75 @@ footer{background:#8b1c1c;color:#fff;text-align:center;padding:14px}
 <body>
 
 <nav>
-<img src="logo.png">
-<div>
-<a href="#courses">Courses</a>
-<a href="#timetable">Timetable</a>
-<a href="#contact">Contact</a>
-</div>
+ <img src="logo.png">
+ <div>
+  <a href="#courses">Courses</a>
+  <a href="#timetable">Timetable</a>
+  <a href="#contact">Contact</a>
+ </div>
 </nav>
 
 <header>
-<div class="hero">
-<img src="logo.png">
-<h1>Syed’s Challenging Tuition</h1>
-<p>Even a laziest student can get good results</p>
-</div>
+ <img src="logo.png">
+ <h1>Syed’s Challenging Tuition</h1>
+ <p>Even a laziest student can get good results</p>
 </header>
 
 <div class="notice">
-<marquee id="noticeText">Loading notices...</marquee>
+ <marquee id="noticeText">Loading notices...</marquee>
 </div>
 
+<!-- COURSES -->
 <div class="section" id="courses">
 <h2>Courses Offered</h2>
-<div class="courses">
-<div class="course"><i class="fa-solid fa-child"></i><h4>1st – 5th</h4></div>
-<div class="course"><i class="fa-solid fa-book"></i><h4>6th – 10th</h4></div>
-<div class="course"><i class="fa-solid fa-laptop"></i><h4>Online Classes (6–10)</h4></div>
-<div class="course"><i class="fa-solid fa-flask"></i><h4>PUC Science</h4></div>
-<div class="course"><i class="fa-solid fa-graduation-cap"></i><h4>JEE / NEET</h4></div>
+<div class="course-grid">
+ <div class="course"><i class="fa-solid fa-child"></i><p>1st – 5th</p></div>
+ <div class="course"><i class="fa-solid fa-book"></i><p>6th – 10th</p></div>
+ <div class="course"><i class="fa-solid fa-laptop"></i><p>Online Classes (6–10)</p></div>
+ <div class="course"><i class="fa-solid fa-graduation-cap"></i><p>PUC Science</p></div>
+ <div class="course"><i class="fa-solid fa-medal"></i><p>JEE / NEET</p></div>
 </div>
 </div>
 
+<!-- TIMETABLE -->
 <div class="section" id="timetable">
 <h2>Class Timetable</h2>
 <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT5Q70dMD4T3tpgGdYCMRVrjrIDPIcDsU8AH9IKHTLT6dcOyjePX2dp8fXkX5uA0nBluOkuaW-7S41Q/pubhtml"></iframe>
 </div>
 
+<!-- CLASSROOM -->
 <div class="section">
 <h2>Our Classroom</h2>
-<div class="slider" id="classroomSlider">
-<div class="slider-track">
-<img src="classroom1.jpg">
-<img src="classroom2.jpg">
-<img src="classroom3.jpg">
-</div>
+<div class="slider" id="classSlider">
+ <div class="slider-track">
+  <img src="classroom1.jpg">
+  <img src="classroom2.jpg">
+  <img src="classroom3.jpg">
+ </div>
 </div>
 </div>
 
+<!-- RESULTS -->
 <div class="section">
 <h2>Our Results</h2>
-<div class="slider" id="resultsSlider">
-<div class="slider-track">
-<img src="result1.jpg">
-<img src="result2.jpg">
-<img src="result3.jpg">
-</div>
+<div class="slider" id="resultSlider">
+ <div class="slider-track">
+  <img src="result1.jpg">
+  <img src="result2.jpg">
+  <img src="result3.jpg">
+ </div>
 </div>
 </div>
 
+<!-- REVIEWS -->
 <div class="section">
 <h2>Student Reviews</h2>
-<div class="review-track" id="reviewTrack"></div>
+<div class="review-slider">
+ <div class="review-track" id="reviewTrack"></div>
+</div>
 </div>
 
+<!-- CONTACT -->
 <div class="section" id="contact">
 <h2>Student Inquiry</h2>
 <input id="inqName" placeholder="Name">
@@ -264,6 +281,7 @@ footer{background:#8b1c1c;color:#fff;text-align:center;padding:14px}
 <button onclick="sendInquiry()">Send on WhatsApp</button>
 </div>
 
+<!-- MAP -->
 <div class="section">
 <h2>Our Location</h2>
 <iframe src="https://www.google.com/maps?q=Syeds+Challenging+Tuition+Center&output=embed"></iframe>
@@ -271,9 +289,10 @@ footer{background:#8b1c1c;color:#fff;text-align:center;padding:14px}
 
 <footer>© 2026 Syed’s Challenging Tuition Center</footer>
 
-<div class="floating-social">
+<!-- FLOATING -->
+<div class="floating">
+<a class="call" href="tel:8660202093"><i class="fa fa-phone"></i></a>
 <a class="whatsapp" href="https://wa.me/918660202093"><i class="fab fa-whatsapp"></i></a>
-<a class="phone" href="tel:8660202093"><i class="fa fa-phone"></i></a>
 <a class="instagram" href="https://instagram.com/"><i class="fab fa-instagram"></i></a>
 </div>
 
@@ -281,20 +300,23 @@ footer{background:#8b1c1c;color:#fff;text-align:center;padding:14px}
 const NOTICE_SHEET="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9-v1cam9L1DaRbBrdoT-VzJvsJtWy6_aUH_lrna3KA3FMG2kd9C4DscxEqjTpMtnz3WzIxh5xp4TE/pub?output=csv";
 const REVIEWS_SHEET="https://docs.google.com/spreadsheets/d/e/2PACX-1vTXfT8B5Jo58GMQ4IXUdd2e0ws3zRo94oMrRqMYx6BKRgvdzhBaCnIuTu5tksMb-OqhAkAWjPO9aXtK/pub?output=csv";
 
+/* NOTICE */
 fetch(NOTICE_SHEET).then(r=>r.text()).then(t=>{
  let rows=t.split("\n").slice(1);
  noticeText.innerText=rows.map(r=>"🔔 "+r).join(" | ");
 });
 
+/* REVIEWS AUTO SLIDER */
 fetch(REVIEWS_SHEET).then(r=>r.text()).then(t=>{
  let rows=t.split("\n").slice(1);
  reviewTrack.innerHTML=rows.map(r=>{
- let c=r.split(",");
- return `<div class="review"><b>${c[0]}</b><p>${c[2]}</p></div>`;
+  let c=r.split(",");
+  return `<div class="review"><b>${c[0]}</b><p>${c[2]}</p></div>`;
  }).join("");
+ startReview();
 });
 
-function slider(id,delay){
+function autoSlider(id,delay){
  const track=document.querySelector(`#${id} .slider-track`);
  let i=0;
  setInterval(()=>{
@@ -302,8 +324,17 @@ function slider(id,delay){
   track.style.transform=`translateX(-${i*100}%)`;
  },delay);
 }
-slider("classroomSlider",3000);
-slider("resultsSlider",3500);
+autoSlider("classSlider",3000);
+autoSlider("resultSlider",3500);
+
+function startReview(){
+ const t=document.getElementById("reviewTrack");
+ let i=0;
+ setInterval(()=>{
+  i=(i+1)%t.children.length;
+  t.style.transform=`translateX(-${i*295}px)`;
+ },4000);
+}
 
 function sendInquiry(){
  let t=`Hello Syed Sir\nName:${inqName.value}\nPhone:${inqPhone.value}\n${inqMsg.value}`;
