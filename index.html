@@ -117,10 +117,7 @@ header p{opacity:.9}
 
 /* SLIDERS */
 .slider{overflow:hidden}
-.slider-track{
- display:flex;
- transition:.6s ease
-}
+.slider-track{display:flex;transition:.6s ease}
 .slider img{
  width:100%;
  height:360px;
@@ -135,11 +132,7 @@ header p{opacity:.9}
 
 /* REVIEWS */
 .review-slider{overflow:hidden}
-.review-track{
- display:flex;
- gap:15px;
- transition:.6s ease
-}
+.review-track{display:flex;gap:15px;transition:.6s ease}
 .review{
  min-width:280px;
  background:#fff;
@@ -194,7 +187,25 @@ iframe{
  font-size:26px;
  box-shadow:0 6px 16px rgba(0,0,0,.3)
 }
-.call{background:#1976d2}
+
+/* CALL ANIMATION */
+.call{
+ background:#1976d2;
+ animation:ring 1.5s infinite, pulse 2s infinite;
+}
+@keyframes ring{
+ 0%{transform:rotate(0)}
+ 10%{transform:rotate(12deg)}
+ 20%{transform:rotate(-12deg)}
+ 30%{transform:rotate(12deg)}
+ 40%{transform:rotate(0)}
+}
+@keyframes pulse{
+ 0%{box-shadow:0 0 0 0 rgba(25,118,210,.6)}
+ 70%{box-shadow:0 0 0 18px rgba(25,118,210,0)}
+ 100%{box-shadow:0 0 0 0 rgba(25,118,210,0)}
+}
+
 .whatsapp{background:#25D366}
 .instagram{
  background:radial-gradient(circle at 30% 110%,
@@ -206,6 +217,15 @@ footer{
  color:#fff;
  text-align:center;
  padding:15px
+}
+
+/* TIMETABLE ANIMATION */
+#timetable{
+ animation:fadeUp 1s ease both;
+}
+@keyframes fadeUp{
+ from{opacity:0;transform:translateY(40px)}
+ to{opacity:1;transform:translateY(0)}
 }
 </style>
 </head>
@@ -231,7 +251,6 @@ footer{
  <marquee id="noticeText">Loading notices...</marquee>
 </div>
 
-<!-- WHY US -->
 <div class="section">
 <h2>Why Choose Us?</h2>
 <p class="desc">Personal attention • Concept clarity • Exam-focused teaching • Proven results</p>
@@ -242,7 +261,6 @@ footer{
 </div>
 </div>
 
-<!-- COURSES -->
 <div class="section" id="courses">
 <h2>Courses Offered</h2>
 <div class="course-grid">
@@ -254,13 +272,11 @@ footer{
 </div>
 </div>
 
-<!-- TIMETABLE -->
 <div class="section" id="timetable">
 <h2>Class Timetable</h2>
 <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT5Q70dMD4T3tpgGdYCMRVrjrIDPIcDsU8AH9IKHTLT6dcOyjePX2dp8fXkX5uA0nBluOkuaW-7S41Q/pubhtml"></iframe>
 </div>
 
-<!-- CLASSROOM -->
 <div class="section">
 <h2>Our Classroom</h2>
 <div class="slider" id="classSlider">
@@ -272,7 +288,6 @@ footer{
 </div>
 </div>
 
-<!-- RESULTS -->
 <div class="section">
 <h2>Our Results</h2>
 <div class="slider" id="resultSlider">
@@ -284,7 +299,6 @@ footer{
 </div>
 </div>
 
-<!-- REVIEWS -->
 <div class="section">
 <h2>Student Reviews</h2>
 <div class="review-slider">
@@ -292,7 +306,6 @@ footer{
 </div>
 </div>
 
-<!-- CONTACT -->
 <div class="section" id="contact">
 <h2>Student Inquiry</h2>
 <input id="inqName" placeholder="Name">
@@ -301,7 +314,6 @@ footer{
 <button onclick="sendInquiry()">Send on WhatsApp</button>
 </div>
 
-<!-- MAP -->
 <div class="section">
 <h2>Our Location</h2>
 <iframe loading="lazy" src="https://www.google.com/maps?q=Syeds+Challenging+Tuition+Center&output=embed"></iframe>
@@ -309,7 +321,6 @@ footer{
 
 <footer>© 2026 Syed’s Challenging Tuition Center</footer>
 
-<!-- FLOATING -->
 <div class="floating">
 <a class="call" href="tel:8660202093"><i class="fa fa-phone"></i></a>
 <a class="whatsapp" href="https://wa.me/918660202093"><i class="fab fa-whatsapp"></i></a>
@@ -317,14 +328,12 @@ footer{
 </div>
 
 <script>
-/* NOTICE */
 fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vT9-v1cam9L1DaRbBrdoT-VzJvsJtWy6_aUH_lrna3KA3FMG2kd9C4DscxEqjTpMtnz3WzIxh5xp4TE/pub?output=csv")
 .then(r=>r.text())
 .then(t=>{
  noticeText.innerText=t.split("\n").slice(1).join(" | ");
 });
 
-/* REVIEWS */
 fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vTXfT8B5Jo58GMQ4IXUdd2e0ws3zRo94oMrRqMYx6BKRgvdzhBaCnIuTu5tksMb-OqhAkAWjPO9aXtK/pub?output=csv")
 .then(r=>r.text())
 .then(t=>{
@@ -336,7 +345,6 @@ fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vTXfT8B5Jo58GMQ4IXUdd2e0w
  startReviewSlider();
 });
 
-/* SLIDERS */
 function autoSlider(id,delay){
  const t=document.querySelector(`#${id} .slider-track`);
  let i=0;
@@ -357,7 +365,6 @@ function startReviewSlider(){
  },4000);
 }
 
-/* INQUIRY */
 function sendInquiry(){
  let t=`Hello Syed Sir\nName:${inqName.value}\nPhone:${inqPhone.value}\n${inqMsg.value}`;
  window.open("https://wa.me/918660202093?text="+encodeURIComponent(t));
