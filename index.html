@@ -7,53 +7,33 @@
 <title>Syed’s Challenging Tuition | Best Tuition Center in Bangalore</title>
 
 <meta name="description" content="Syed’s Challenging Tuition Center in Bangalore for 1st–10th, PUC Science, JEE & NEET. Call 8660202093">
-<meta name="keywords" content="tuition Bangalore, best tuition center, PUC tuition, JEE coaching, NEET coaching">
+<meta name="keywords" content="tuition Bangalore, PUC tuition, JEE coaching, NEET coaching">
 <meta name="author" content="Syed’s Challenging Tuition Center">
 
 <meta name="google-site-verification" content="KSkGueGopsJXf-LAmatVtZkD-1llvKo66gPh10fESfU">
-
 <link rel="sitemap" type="application/xml" href="https://uzzu008-ops.github.io/syedschallengingtuitions/sitemap.xml">
 
-<!-- Open Graph -->
 <meta property="og:title" content="Syed’s Challenging Tuition">
 <meta property="og:description" content="Best tuition center in Bangalore">
 <meta property="og:image" content="https://uzzu008-ops.github.io/syedschallengingtuitions/logo.png">
 <meta property="og:url" content="https://uzzu008-ops.github.io/syedschallengingtuitions/">
 
-<!-- Fonts & Icons -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<!-- Schema -->
-<script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "EducationalOrganization",
- "name": "Syed’s Challenging Tuition",
- "url": "https://uzzu008-ops.github.io/syedschallengingtuitions/",
- "logo": "https://uzzu008-ops.github.io/syedschallengingtuitions/logo.png",
- "telephone": "+91-8660202093",
- "address": {
-   "@type": "PostalAddress",
-   "addressLocality": "Bangalore",
-   "addressRegion": "KA",
-   "addressCountry": "IN"
- }
-}
-</script>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins}
 html{scroll-behavior:smooth}
 body{background:#f4f4f4}
 
+/* NAV */
 nav{
  background:#fff;
  padding:14px 30px;
  display:flex;
  justify-content:space-between;
  align-items:center;
- box-shadow:0 3px 10px rgba(0,0,0,.1);
+ box-shadow:0 4px 14px rgba(0,0,0,.08);
  position:sticky;
  top:0;
  z-index:1000
@@ -61,91 +41,101 @@ nav{
 nav img{height:50px}
 nav a{text-decoration:none;margin-left:20px;color:#111;font-weight:600}
 
+/* HEADER */
 header{
- background:#8b1c1c;
+ background:linear-gradient(135deg,#8b1c1c,#a32626);
  color:#fff;
  text-align:center;
- padding:35px
+ padding:40px 20px
 }
 header img{
  width:130px;
  background:#fff;
  padding:10px;
- border-radius:12px
+ border-radius:12px;
+ margin-bottom:10px
 }
 
+/* NOTICE */
 .notice{
  background:#ffeb3b;
  padding:12px;
- font-weight:600
+ font-weight:600;
+ box-shadow:0 2px 8px rgba(0,0,0,.15)
 }
 
+/* SECTION */
 .section{
  background:#fff;
- margin:24px auto;
- padding:26px;
+ margin:25px auto;
+ padding:30px;
  max-width:1100px;
  border-radius:16px;
- box-shadow:0 6px 16px rgba(0,0,0,.1)
+ box-shadow:0 10px 25px rgba(0,0,0,.08)
 }
 .section h2{
  text-align:center;
  color:#8b1c1c;
- margin-bottom:18px
+ margin-bottom:20px
 }
 
-/* SLIDERS */
-.slider{overflow:hidden;border-radius:16px}
+/* SLIDER */
+.slider{overflow:hidden;width:100%}
 .slider-track{
  display:flex;
- transition:transform .6s ease-in-out
+ transition:transform .6s cubic-bezier(.4,0,.2,1)
 }
 .slider img{
- width:100vw;
+ width:100%;
  max-width:1100px;
- height:520px;
+ height:auto;
  object-fit:cover;
  flex-shrink:0;
- border-radius:16px
-}
-@media(max-width:768px){
- .slider img{height:320px}
+ border-radius:14px
 }
 
 /* REVIEWS */
 .review-track{
  display:flex;
- gap:16px;
+ gap:18px;
  overflow-x:auto;
- scroll-snap-type:x mandatory
+ scroll-snap-type:x mandatory;
+ padding-bottom:10px
 }
 .review{
- min-width:280px;
+ min-width:300px;
  background:#fff;
- padding:16px;
+ padding:18px;
  border-radius:14px;
- box-shadow:0 4px 10px rgba(0,0,0,.15);
+ box-shadow:0 6px 16px rgba(0,0,0,.12);
  scroll-snap-align:start
 }
+.review b{display:block;margin-bottom:6px}
+.review .stars{color:#fbc02d;margin-bottom:6px}
 
 /* FORM */
 input,textarea{
  width:100%;
- padding:12px;
- margin-bottom:10px;
- border-radius:8px;
- border:1px solid #ccc
+ padding:14px;
+ margin-bottom:12px;
+ border-radius:10px;
+ border:1px solid #ccc;
+ font-size:15px
 }
 button{
  background:#25D366;
  color:#fff;
  border:none;
- padding:14px;
+ padding:15px;
  width:100%;
- border-radius:10px;
- font-size:16px
+ border-radius:12px;
+ font-size:17px;
+ font-weight:600;
+ cursor:pointer
 }
+button:hover{opacity:.9}
 
+/* MAP */
 iframe{
  width:100%;
  height:340px;
@@ -153,14 +143,15 @@ iframe{
  border-radius:14px
 }
 
+/* FOOTER */
 footer{
  background:#8b1c1c;
  color:#fff;
  text-align:center;
- padding:14px
+ padding:16px
 }
 
-/* FLOATING BUTTONS */
+/* FLOATING SOCIAL */
 .floating-social{
  position:fixed;
  right:20px;
@@ -171,7 +162,8 @@ footer{
  z-index:99999
 }
 .floating-social a{
- width:56px;height:56px;
+ width:56px;
+ height:56px;
  border-radius:50%;
  display:flex;
  align-items:center;
@@ -256,7 +248,7 @@ footer{
 <input id="inqName" placeholder="Name">
 <input id="inqPhone" placeholder="Phone">
 <textarea id="inqMsg" placeholder="Message"></textarea>
-<button onclick="sendInquiry()">Send on WhatsApp</button>
+<button onclick="sendInquiry()">📲 Send on WhatsApp</button>
 </div>
 
 <div class="section">
@@ -267,8 +259,10 @@ footer{
 <footer>© 2026 Syed’s Challenging Tuition Center</footer>
 
 <div class="floating-social">
-<a class="whatsapp" href="https://wa.me/918660202093" target="_blank"><i class="fab fa-whatsapp"></i></a>
-<a class="instagram" href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+<a class="whatsapp" href="https://wa.me/918660202093" target="_blank">
+<i class="fab fa-whatsapp"></i></a>
+<a class="instagram" href="https://instagram.com/" target="_blank">
+<i class="fab fa-instagram"></i></a>
 </div>
 
 <script>
@@ -284,23 +278,29 @@ fetch(REVIEWS_SHEET).then(r=>r.text()).then(t=>{
  let rows=t.split("\n").slice(1);
  reviewTrack.innerHTML=rows.map(r=>{
  let c=r.split(",");
- return `<div class="review"><b>${c[0]}</b><p>${c[2]}</p></div>`;
+ return `<div class="review">
+ <b>${c[0]}</b>
+ <div class="stars">★★★★★</div>
+ <p>${c[2]}</p>
+ </div>`;
  }).join("");
 });
 
-function autoSlider(id,delay){
+function slider(id,delay){
  const track=document.querySelector(`#${id} .slider-track`);
  let i=0;
- let timer=setInterval(move,delay);
- function move(){
+ let timer=setInterval(run,delay);
+
+ function run(){
   i=(i+1)%track.children.length;
   track.style.transform=`translateX(-${i*100}%)`;
  }
- track.parentElement.onmouseenter=()=>clearInterval(timer);
- track.parentElement.onmouseleave=()=>timer=setInterval(move,delay);
+
+ track.addEventListener("mouseenter",()=>clearInterval(timer));
+ track.addEventListener("mouseleave",()=>timer=setInterval(run,delay));
 }
-autoSlider("classroomSlider",3000);
-autoSlider("resultsSlider",3500);
+slider("classroomSlider",3000);
+slider("resultsSlider",3500);
 
 function sendInquiry(){
  let t=`Hello Syed Sir\nName:${inqName.value}\nPhone:${inqPhone.value}\n${inqMsg.value}`;
