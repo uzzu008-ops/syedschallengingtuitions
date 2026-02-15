@@ -9,9 +9,6 @@
 <meta name="description" content="Syed’s Challenging Tuition in Bangalore offers coaching for 1st–10th, PUC Science, JEE & NEET with Online & Offline Classes. Call 8660202093">
 <meta name="keywords" content="tuition Bangalore, PUC tuition, JEE coaching, NEET coaching, online classes">
 <meta name="author" content="Syed’s Challenging Tuition Center">
-<meta name="google-site-verification" content="KSkGueGopsJXf-LAmatVtZkD-1llvKo66gPh10fESfU">
-
-<link rel="sitemap" type="application/xml" href="https://uzzu008-ops.github.io/syedschallengingtuitions/sitemap.xml">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -118,8 +115,8 @@ header p{opacity:.9}
 .slider-track{display:flex;transition:.6s ease}
 .slider img{
  width:100%;
- height:360px;          /* YOUR ORIGINAL SIZE KEPT */
- object-fit:contain;     /* YOUR ORIGINAL FIT KEPT */
+ height:360px;
+ object-fit:contain;
  background:#fff;
  flex-shrink:0;
  border-radius:14px
@@ -233,7 +230,63 @@ footer{
 </div>
 </div>
 
-<!-- KEEPING ALL YOUR OLD SECTIONS SAME -->
+<div class="section" id="courses">
+<h2>Courses Offered</h2>
+<div class="course-grid">
+ <div class="course"><i class="fa-solid fa-child"></i><p>1st – 5th</p></div>
+ <div class="course"><i class="fa-solid fa-book"></i><p>6th – 10th</p></div>
+ <div class="course"><i class="fa-solid fa-laptop"></i><p>Online Classes (6–10)</p></div>
+ <div class="course"><i class="fa-solid fa-graduation-cap"></i><p>PUC Science</p></div>
+ <div class="course"><i class="fa-solid fa-medal"></i><p>JEE / NEET</p></div>
+</div>
+</div>
+
+<div class="section" id="timetable">
+<h2>Class Timetable</h2>
+<iframe src="YOUR_TIMETABLE_LINK"></iframe>
+</div>
+
+<div class="section">
+<h2>Our Classroom</h2>
+<div class="slider" id="classSlider">
+ <div class="slider-track">
+  <img src="classroom1.jpg">
+  <img src="classroom2.jpg">
+  <img src="classroom3.jpg">
+ </div>
+</div>
+</div>
+
+<div class="section">
+<h2>Our Results</h2>
+<div class="slider" id="resultSlider">
+ <div class="slider-track">
+  <img src="result1.jpg">
+  <img src="result2.jpg">
+  <img src="result3.jpg">
+ </div>
+</div>
+</div>
+
+<div class="section">
+<h2>Student Reviews</h2>
+<div class="review-slider">
+ <div class="review-track" id="reviewTrack"></div>
+</div>
+</div>
+
+<div class="section" id="contact">
+<h2>Student Inquiry</h2>
+<input id="inqName" placeholder="Name">
+<input id="inqPhone" placeholder="Phone">
+<textarea id="inqMsg" placeholder="Message"></textarea>
+<button onclick="sendInquiry()">Send on WhatsApp</button>
+</div>
+
+<div class="section">
+<h2>Our Location</h2>
+<iframe src="https://www.google.com/maps?q=Syeds+Challenging+Tuition+Center&output=embed"></iframe>
+</div>
 
 <footer>© 2026 Syed’s Challenging Tuition Center</footer>
 
@@ -245,8 +298,8 @@ footer{
 
 <script>
 
-/* NOTICE FIXED */
-fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vT9-v1cam9L1DaRbBrdoT-VzJvsJtWy6_aUH_lrna3KA3FMG2kd9C4DscxEqjTpMtnz3WzIxh5xp4TE/pub?output=csv")
+/* NOTICE */
+fetch("YOUR_NOTICE_CSV_LINK")
 .then(r=>r.text())
 .then(t=>{
  let clean = t.replace(/\r/g,"").split("\n").slice(1).filter(x=>x.trim()!="");
@@ -264,6 +317,12 @@ function autoSlider(id,delay){
 }
 autoSlider("classSlider",3000);
 autoSlider("resultSlider",3500);
+
+/* INQUIRY */
+function sendInquiry(){
+ let t=`Hello Syed Sir\nName:${inqName.value}\nPhone:${inqPhone.value}\n${inqMsg.value}`;
+ window.open("https://wa.me/918660202093?text="+encodeURIComponent(t));
+}
 
 </script>
 
