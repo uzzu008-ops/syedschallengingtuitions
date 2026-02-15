@@ -301,18 +301,24 @@ fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vT9-v1cam9L1DaRbBrdoT-VzJ
 .then(r=>r.text())
 .then(t=>{
  let rows = t.replace(/\r/g,"").split("\n").slice(1);
- noticeT<div class="floating">
-  <a class="call" href="tel:8660202093"><i class="fa fa-phone"></i></a>
-  <a class="whatsapp" href="https://wa.me/918660202093" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+ noticeT
+  <div class="floating">
+<a class="call" href="tel:8660202093">
+<i class="fa fa-phone"></i>
+</a>
 
-  <!-- FIXED INSTAGRAM LINK -->
-  <a class="instagram"
-     href="https://www.instagram.com/syeds_tutions/"
-     target="_blank"
-     rel="noopener noreferrer">
-    <i class="fab fa-instagram"></i>
-  </a>
-      </div>ext.innerText = rows.join("  |  ");
+<a class="whatsapp" href="https://wa.me/918660202093" target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+<a class="instagram"
+   href="https://instagram.com/syeds_tutions"
+   target="_blank"
+   rel="noopener noreferrer">
+<i class="fab fa-instagram"></i>
+</a>
+</div>
+    ext.innerText = rows.join("  |  ");
 });
 
 /* REVIEW FULL FETCH */
