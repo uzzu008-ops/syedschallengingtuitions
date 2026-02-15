@@ -9,6 +9,9 @@
 <meta name="description" content="Syed’s Challenging Tuition in Bangalore offers coaching for 1st–10th, PUC Science, JEE & NEET with Online & Offline Classes. Call 8660202093">
 <meta name="keywords" content="tuition Bangalore, PUC tuition, JEE coaching, NEET coaching, online classes">
 <meta name="author" content="Syed’s Challenging Tuition Center">
+<meta name="google-site-verification" content="KSkGueGopsJXf-LAmatVtZkD-1llvKo66gPh10fESfU">
+
+<link rel="sitemap" type="application/xml" href="https://uzzu008-ops.github.io/syedschallengingtuitions/sitemap.xml">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -76,19 +79,90 @@ header p{opacity:.9}
  margin-bottom:20px
 }
 
+/* GOOGLE BADGE */
+.google-badge{
+ display:flex;
+ justify-content:center;
+ margin-bottom:10px
+}
+.google-badge a{
+ background:#fff;
+ padding:10px 18px;
+ border-radius:30px;
+ box-shadow:0 4px 12px rgba(0,0,0,.15);
+ text-decoration:none;
+ color:#111;
+ font-weight:600
+}
+.google-badge span{color:#fbbc05}
+
+/* COURSES */
+.course-grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+ gap:20px
+}
+.course{
+ background:#fafafa;
+ padding:20px;
+ border-radius:14px;
+ text-align:center;
+ box-shadow:0 4px 12px rgba(0,0,0,.08);
+ transition:.3s
+}
+.course:hover{transform:translateY(-6px)}
+.course i{font-size:30px;color:#8b1c1c;margin-bottom:10px}
+
 /* SLIDERS */
 .slider{overflow:hidden}
 .slider-track{display:flex;transition:.6s ease}
 .slider img{
  width:100%;
- height:360px;
- object-fit:contain;
+ height:360px;          /* YOUR ORIGINAL SIZE KEPT */
+ object-fit:contain;     /* YOUR ORIGINAL FIT KEPT */
  background:#fff;
  flex-shrink:0;
  border-radius:14px
 }
 @media(max-width:768px){
  .slider img{height:220px}
+}
+
+/* REVIEWS */
+.review-slider{overflow:hidden}
+.review-track{display:flex;gap:15px;transition:.6s ease}
+.review{
+ min-width:280px;
+ background:#fff;
+ padding:16px;
+ border-radius:14px;
+ box-shadow:0 4px 10px rgba(0,0,0,.15)
+}
+
+/* FORM */
+input,textarea{
+ width:100%;
+ padding:12px;
+ margin-bottom:10px;
+ border-radius:8px;
+ border:1px solid #ccc
+}
+button{
+ background:#25D366;
+ color:#fff;
+ border:none;
+ padding:14px;
+ width:100%;
+ border-radius:10px;
+ font-size:16px
+}
+
+/* MAP */
+iframe{
+ width:100%;
+ height:320px;
+ border:none;
+ border-radius:14px
 }
 
 /* FLOATING BUTTONS */
@@ -111,6 +185,7 @@ header p{opacity:.9}
  font-size:26px;
  box-shadow:0 6px 16px rgba(0,0,0,.3)
 }
+
 .call{background:#1976d2}
 .whatsapp{background:#25D366}
 .instagram{
@@ -130,7 +205,7 @@ footer{
 <body>
 
 <nav>
- <img src="logo.png" alt="Logo">
+ <img src="logo.png">
  <div>
   <a href="#courses">Courses</a>
   <a href="#timetable">Timetable</a>
@@ -139,7 +214,7 @@ footer{
 </nav>
 
 <header>
- <img src="logo.png" alt="Logo">
+ <img src="logo.png">
  <h1>Syed’s Challenging Tuition</h1>
  <p>Even a laziest student can get good results</p>
 </header>
@@ -148,39 +223,37 @@ footer{
  <marquee id="noticeText">Loading notices...</marquee>
 </div>
 
-<!-- KEEPING YOUR ORIGINAL SECTIONS SAME BELOW -->
+<div class="section">
+<h2>Why Choose Us?</h2>
+<p class="desc">Personal attention • Concept clarity • Exam-focused teaching • Proven results</p>
+<div class="google-badge">
+ <a href="https://maps.app.goo.gl/Fx73sCieg7SkcE1o8" target="_blank">
+  <span>★★★★★</span> 4.9 Rating on Google
+ </a>
+</div>
+</div>
+
+<!-- KEEPING ALL YOUR OLD SECTIONS SAME -->
 
 <footer>© 2026 Syed’s Challenging Tuition Center</footer>
 
 <div class="floating">
 <a class="call" href="tel:8660202093"><i class="fa fa-phone"></i></a>
 <a class="whatsapp" href="https://wa.me/918660202093"><i class="fab fa-whatsapp"></i></a>
-
-<!-- FIXED INSTAGRAM -->
-<a class="instagram" 
-   href="https://www.instagram.com/syeds_tutions/" 
-   target="_blank">
-   <i class="fab fa-instagram"></i>
-</a>
+<a class="instagram" href="https://www.instagram.com/syeds_tutions/" target="_blank"><i class="fab fa-instagram"></i></a>
 </div>
 
 <script>
 
-/* ✅ FIXED NOTICE FETCH */
+/* NOTICE FIXED */
 fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vT9-v1cam9L1DaRbBrdoT-VzJvsJtWy6_aUH_lrna3KA3FMG2kd9C4DscxEqjTpMtnz3WzIxh5xp4TE/pub?output=csv")
 .then(r=>r.text())
 .then(t=>{
- let rows = t.split("\n")
-  .map(r=>r.replace(/\r/g,'').trim())
-  .filter(r=>r.length>0);
-
- noticeText.innerText = rows.slice(1).join("  |  ");
-})
-.catch(()=>{
- noticeText.innerText="Admissions Open 2026";
+ let clean = t.replace(/\r/g,"").split("\n").slice(1).filter(x=>x.trim()!="");
+ noticeText.innerText = clean.join("  |  ");
 });
 
-/* KEEP YOUR ORIGINAL SLIDER */
+/* SLIDERS */
 function autoSlider(id,delay){
  const t=document.querySelector(`#${id} .slider-track`);
  let i=0;
@@ -189,7 +262,6 @@ function autoSlider(id,delay){
   t.style.transform=`translateX(-${i*100}%)`;
  },delay);
 }
-
 autoSlider("classSlider",3000);
 autoSlider("resultSlider",3500);
 
