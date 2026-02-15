@@ -15,173 +15,167 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins}
-body{background:#8b1c1c;color:#111}
 html{scroll-behavior:smooth}
+body{background:#f4f4f4}
 
 /* NAV */
 nav{
-background:#fff;
-padding:14px 30px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-position:sticky;
-top:0;
-z-index:1000;
-box-shadow:0 3px 10px rgba(0,0,0,.2)
+ background:#fff;
+ padding:14px 30px;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ box-shadow:0 3px 10px rgba(0,0,0,.1);
+ position:sticky;
+ top:0;
+ z-index:1000
 }
 nav img{height:50px}
 nav a{text-decoration:none;margin-left:20px;color:#111;font-weight:600}
 
 /* HEADER */
 header{
-background:#8b1c1c;
-color:#fff;
-text-align:center;
-padding:40px 20px
+ background:#8b1c1c;
+ color:#fff;
+ text-align:center;
+ padding:40px 20px
 }
 header img{
-width:130px;
-background:#fff;
-padding:10px;
-border-radius:12px
+ width:140px;
+ background:#fff;
+ padding:10px;
+ border-radius:12px
 }
-header h1{margin-top:10px}
 
 /* NOTICE */
 .notice{
-background:#ffeb3b;
-padding:10px;
-font-weight:600;
-color:#000
+ background:#ffeb3b;
+ padding:12px;
+ font-weight:600
 }
 
-/* SECTIONS */
+/* SECTION */
 .section{
-background:#fff;
-margin:25px auto;
-padding:30px;
-max-width:1100px;
-border-radius:16px;
-box-shadow:0 6px 15px rgba(0,0,0,.2)
+ background:#fff;
+ margin:25px auto;
+ padding:30px;
+ max-width:1100px;
+ border-radius:16px;
+ box-shadow:0 6px 15px rgba(0,0,0,.1)
 }
-.section h2{text-align:center;color:#8b1c1c;margin-bottom:15px}
+.section h2{text-align:center;color:#8b1c1c;margin-bottom:18px}
 
 /* GOOGLE BADGE */
-.google-badge{
-display:flex;
-justify-content:center;
-margin-top:10px
-}
+.google-badge{display:flex;justify-content:center;margin-bottom:10px}
 .google-badge a{
-background:#fff;
-padding:8px 18px;
-border-radius:30px;
-box-shadow:0 4px 12px rgba(0,0,0,.2);
-text-decoration:none;
-color:#000;
-font-weight:600
+ background:#fff;
+ padding:10px 18px;
+ border-radius:30px;
+ box-shadow:0 4px 12px rgba(0,0,0,.15);
+ text-decoration:none;
+ color:#111;
+ font-weight:600
 }
+.google-badge span{color:#fbbc05}
 
 /* COURSES */
 .course-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+ gap:20px
 }
 .course{
-background:#f9f9f9;
-padding:20px;
-border-radius:14px;
-text-align:center;
-transition:.3s
+ background:#fafafa;
+ padding:20px;
+ border-radius:14px;
+ text-align:center;
+ box-shadow:0 4px 12px rgba(0,0,0,.08);
+ transition:.3s
 }
 .course:hover{transform:translateY(-6px)}
-.course i{font-size:28px;color:#8b1c1c;margin-bottom:8px}
+.course i{font-size:30px;color:#8b1c1c;margin-bottom:10px}
 
 /* SLIDER */
 .slider{overflow:hidden}
-.slider-track{display:flex;transition:0.6s}
+.slider-track{display:flex;transition:.6s ease}
 .slider img{
-width:100%;
-height:420px;
-object-fit:cover;
-border-radius:14px
-}
-@media(max-width:768px){
-.slider img{height:240px}
+ width:100%;
+ height:360px;
+ object-fit:contain;
+ background:#fff;
+ flex-shrink:0;
+ border-radius:14px
 }
 
 /* REVIEWS */
 .review-slider{overflow:hidden}
-.review-track{display:flex;gap:15px;transition:.6s}
+.review-track{display:flex;gap:15px;transition:.6s ease}
 .review{
-min-width:300px;
-background:#f9f9f9;
-padding:15px;
-border-radius:14px;
-box-shadow:0 4px 10px rgba(0,0,0,.2)
+ min-width:280px;
+ background:#fff;
+ padding:16px;
+ border-radius:14px;
+ box-shadow:0 4px 10px rgba(0,0,0,.15)
 }
 
 /* FORM */
 input,textarea{
-width:100%;
-padding:12px;
-margin-bottom:10px;
-border-radius:8px;
-border:1px solid #ccc
+ width:100%;
+ padding:12px;
+ margin-bottom:10px;
+ border-radius:8px;
+ border:1px solid #ccc
 }
 button{
-background:#25D366;
-color:#fff;
-border:none;
-padding:14px;
-width:100%;
-border-radius:10px;
-font-size:16px
+ background:#25D366;
+ color:#fff;
+ border:none;
+ padding:14px;
+ width:100%;
+ border-radius:10px;
+ font-size:16px
 }
 
-/* MAP */
 iframe{
-width:100%;
-height:320px;
-border:none;
-border-radius:14px
+ width:100%;
+ height:320px;
+ border:none;
+ border-radius:14px
 }
 
-/* FLOATING BUTTONS */
+/* FLOATING */
 .floating{
-position:fixed;
-right:18px;
-bottom:18px;
-display:flex;
-flex-direction:column;
-gap:15px;
-z-index:9999
+ position:fixed;
+ right:18px;
+ bottom:18px;
+ display:flex;
+ flex-direction:column;
+ gap:14px;
+ z-index:9999
 }
 .floating a{
-width:60px;
-height:60px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-color:#fff;
-font-size:24px;
-box-shadow:0 6px 16px rgba(0,0,0,.4)
+ width:56px;height:56px;
+ border-radius:50%;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ color:#fff;
+ font-size:26px;
+ box-shadow:0 6px 16px rgba(0,0,0,.3)
 }
 
 .call{background:#1976d2}
 .whatsapp{background:#25D366}
 .instagram{
-background:radial-gradient(circle at 30% 110%,#fdf497 0%,#fd5949 45%,#d6249f 60%,#285AEB 90%)
+ background:radial-gradient(circle at 30% 110%,
+ #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%)
 }
 
 footer{
-background:#8b1c1c;
-color:#fff;
-text-align:center;
-padding:15px
+ background:#8b1c1c;
+ color:#fff;
+ text-align:center;
+ padding:15px
 }
 </style>
 </head>
@@ -189,74 +183,78 @@ padding:15px
 <body>
 
 <nav>
-<img src="logo.png">
-<div>
-<a href="#courses">Courses</a>
-<a href="#timetable">Timetable</a>
-<a href="#contact">Contact</a>
-</div>
+ <img src="logo.png">
+ <div>
+  <a href="#courses">Courses</a>
+  <a href="#timetable">Timetable</a>
+  <a href="#contact">Contact</a>
+ </div>
 </nav>
 
 <header>
-<img src="logo.png">
-<h1>Syed’s Challenging Tuition</h1>
-<p>Even a laziest student can get good results</p>
+ <img src="logo.png">
+ <h1>Syed’s Challenging Tuition</h1>
+ <p>Even a laziest student can get good results</p>
 </header>
 
 <div class="notice">
-<marquee id="noticeText">Loading notices...</marquee>
+ <marquee id="noticeText">Loading notices...</marquee>
 </div>
 
 <div class="section">
-<h2>Description</h2>
-<p style="text-align:center">Personal attention • Concept clarity • Exam-focused teaching • Proven results</p>
+<h2>Why Choose Us?</h2>
+<p style="text-align:center;color:#555;margin-bottom:20px">
+Personal attention • Concept clarity • Exam-focused teaching • Proven results
+</p>
 <div class="google-badge">
-<a href="https://maps.app.goo.gl/Fx73sCieg7SkcE1o8" target="_blank">★★★★★ 4.9 Rating on Google</a>
+ <a href="https://maps.app.goo.gl/Fx73sCieg7SkcE1o8" target="_blank">
+  <span>★★★★★</span> 4.9 Rating on Google
+ </a>
 </div>
 </div>
 
 <div class="section" id="courses">
 <h2>Courses Offered</h2>
 <div class="course-grid">
-<div class="course"><i class="fa-solid fa-child"></i><p>1st – 5th</p></div>
-<div class="course"><i class="fa-solid fa-book"></i><p>6th – 10th</p></div>
-<div class="course"><i class="fa-solid fa-laptop"></i><p>Online Classes</p></div>
-<div class="course"><i class="fa-solid fa-graduation-cap"></i><p>PUC Science</p></div>
-<div class="course"><i class="fa-solid fa-medal"></i><p>JEE / NEET</p></div>
+ <div class="course"><i class="fa-solid fa-child"></i><p>1st – 5th</p></div>
+ <div class="course"><i class="fa-solid fa-book"></i><p>6th – 10th</p></div>
+ <div class="course"><i class="fa-solid fa-laptop"></i><p>Online Classes (6–10)</p></div>
+ <div class="course"><i class="fa-solid fa-graduation-cap"></i><p>PUC Science</p></div>
+ <div class="course"><i class="fa-solid fa-medal"></i><p>JEE / NEET</p></div>
 </div>
 </div>
 
 <div class="section" id="timetable">
 <h2>Class Timetable</h2>
-<iframe src="YOUR_TIMETABLE_GOOGLE_SHEET_LINK"></iframe>
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT5Q70dMD4T3tpgGdYCMRVrjrIDPIcDsU8AH9IKHTLT6dcOyjePX2dp8fXkX5uA0nBluOkuaW-7S41Q/pubhtml"></iframe>
 </div>
 
 <div class="section">
 <h2>Our Classroom</h2>
 <div class="slider" id="classSlider">
-<div class="slider-track">
-<img src="classroom1.jpg">
-<img src="classroom2.jpg">
-<img src="classroom3.jpg">
-</div>
+ <div class="slider-track">
+  <img src="classroom1.jpg">
+  <img src="classroom2.jpg">
+  <img src="classroom3.jpg">
+ </div>
 </div>
 </div>
 
 <div class="section">
 <h2>Our Results</h2>
 <div class="slider" id="resultSlider">
-<div class="slider-track">
-<img src="result1.jpg">
-<img src="result2.jpg">
-<img src="result3.jpg">
-</div>
+ <div class="slider-track">
+  <img src="result1.jpg">
+  <img src="result2.jpg">
+  <img src="result3.jpg">
+ </div>
 </div>
 </div>
 
 <div class="section">
 <h2>Student Reviews</h2>
 <div class="review-slider">
-<div class="review-track" id="reviewTrack"></div>
+ <div class="review-track" id="reviewTrack"></div>
 </div>
 </div>
 
@@ -277,35 +275,57 @@ padding:15px
 
 <div class="floating">
 <a class="call" href="tel:8660202093"><i class="fa fa-phone"></i></a>
-<a class="whatsapp" href="https://wa.me/918660202093" target="_blank"><i class="fab fa-whatsapp"></i></a>
-<a class="instagram" href="https://www.instagram.com/syeds_tutions/" target="_blank"><i class="fab fa-instagram"></i></a>
+<a class="whatsapp" href="https://wa.me/918660202093"><i class="fab fa-whatsapp"></i></a>
+<a class="instagram" href="https://www.instagram.com/syeds_tutions/" target="_blank" rel="noopener">
+<i class="fab fa-instagram"></i></a>
 </div>
 
 <script>
 
-/* NOTICE FETCH */
-fetch("YOUR_NOTICE_GOOGLE_SHEET_CSV")
+/* NOTICE – FULL GOOGLE SHEET FETCH */
+fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vT9-v1cam9L1DaRbBrdoT-VzJvsJtWy6_aUH_lrna3KA3FMG2kd9C4DscxEqjTpMtnz3WzIxh5xp4TE/pub?output=csv")
 .then(r=>r.text())
 .then(t=>{
-noticeText.innerText=t.split("\n").slice(1).join(" | ");
+ let rows = t.replace(/\r/g,"").split("\n").slice(1);
+ noticeText.innerText = rows.join("  |  ");
+});
+
+/* REVIEW – FULL GOOGLE SHEET FETCH */
+fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vTXfT8B5Jo58GMQ4IXUdd2e0ws3zRo94oMrRqMYx6BKRgvdzhBaCnIuTu5tksMb-OqhAkAWjPO9aXtK/pub?output=csv")
+.then(r=>r.text())
+.then(t=>{
+ let rows=t.replace(/\r/g,"").split("\n").slice(1);
+ reviewTrack.innerHTML=rows.map(r=>{
+  let c=r.split(",");
+  return `<div class="review"><b>${c[0]}</b><p>${c[2]}</p></div>`;
+ }).join("");
+ startReviewSlider();
 });
 
 /* SLIDER */
 function autoSlider(id,delay){
-const t=document.querySelector(`#${id} .slider-track`);
-let i=0;
-setInterval(()=>{
-i=(i+1)%t.children.length;
-t.style.transform=`translateX(-${i*100}%)`;
-},delay);
+ const t=document.querySelector(`#${id} .slider-track`);
+ let i=0;
+ setInterval(()=>{
+  i=(i+1)%t.children.length;
+  t.style.transform=`translateX(-${i*100}%)`;
+ },delay);
 }
 autoSlider("classSlider",3000);
 autoSlider("resultSlider",3500);
 
-/* WHATSAPP */
+function startReviewSlider(){
+ const t=document.getElementById("reviewTrack");
+ let i=0;
+ setInterval(()=>{
+  i=(i+1)%t.children.length;
+  t.style.transform=`translateX(-${i*295}px)`;
+ },4000);
+}
+
 function sendInquiry(){
-let t=`Hello Syed Sir\nName:${inqName.value}\nPhone:${inqPhone.value}\n${inqMsg.value}`;
-window.open("https://wa.me/918660202093?text="+encodeURIComponent(t));
+ let t=`Hello Syed Sir\nName:${inqName.value}\nPhone:${inqPhone.value}\n${inqMsg.value}`;
+ window.open("https://wa.me/918660202093?text="+encodeURIComponent(t));
 }
 
 </script>
