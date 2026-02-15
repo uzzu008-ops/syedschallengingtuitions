@@ -1,25 +1,27 @@
-1<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Best SSLC & PUC Coaching in Nagawara Bangalore | Syed’s Challenging Tuition Center</title>
+<title>Syed’s Challenging Tuition | Best Tuition Center in Bangalore</title>
 
-<meta name="description" content="Syed’s Challenging Tuition Center in Nagawara, Bangalore offers coaching for 1st–10th, SSLC, PUC Science (PCMC & PCMB), JEE & NEET with Online & Offline classes. Call 8660202093.">
-<meta name="keywords" content="SSLC coaching Nagawara, PUC Science tuition Nagawara, best tuition center in Nagawara Bangalore, JEE coaching Nagawara, NEET coaching Nagawara, tuition near Hegde Nagar, coaching near Thanisandra">
+<meta name="description" content="Syed’s Challenging Tuition Center in Bangalore offers coaching for 1st–10th, SSLC, PUC Science (PCMC & PCMB), JEE & NEET with Online & Offline classes. Call 8660202093.">
+<meta name="keywords" content="SSLC coaching Bangalore, PUC Science tuition Bangalore, best tuition center in Bangalore, JEE coaching Bangalore, NEET coaching Bangalore, tuition near Nagawara, coaching near Thanisandra">
 <meta name="author" content="Syed’s Challenging Tuition Center">
 <meta name="robots" content="index, follow">
 
 <meta name="google-site-verification" content="KSkGueGopsJXf-LAmatVtZkD-1llvKo66gPh10fESfU">
 
 <link rel="icon" type="image/png" href="logo.png">
+<link rel="sitemap" type="application/xml" href="https://uzzu008-ops.github.io/syedschallengingtuitions/sitemap.xml">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<!-- Local SEO Structured Data -->
+<!-- LOCAL SEO STRUCTURED DATA -->
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -28,14 +30,13 @@
  "image": "https://uzzu008-ops.github.io/syedschallengingtuitions/logo.png",
  "address": {
    "@type": "PostalAddress",
-   "streetAddress": "Nagawara Main Road",
-   "addressLocality": "Nagawara",
-   "addressRegion": "Bangalore",
-   "postalCode": "560045",
+   "addressLocality": "Bangalore",
    "addressCountry": "India"
  },
  "telephone": "+918660202093",
- "areaServed": ["Nagawara","Hegde Nagar","Thanisandra","HBR Layout"]
+ "sameAs": [
+   "https://www.instagram.com/syeds_tutions"
+ ]
 }
 </script>
 
@@ -91,8 +92,16 @@ header p{opacity:.9}
  border-radius:16px;
  box-shadow:0 6px 15px rgba(0,0,0,.1)
 }
-.section h2{text-align:center;color:#8b1c1c;margin-bottom:18px}
-.section p.desc{text-align:center;color:#555;margin-bottom:20px}
+.section h2{
+ text-align:center;
+ color:#8b1c1c;
+ margin-bottom:18px
+}
+.section p.desc{
+ text-align:center;
+ color:#555;
+ margin-bottom:20px
+}
 
 /* GOOGLE BADGE */
 .google-badge{
@@ -200,9 +209,10 @@ iframe{
  font-size:26px;
  box-shadow:0 6px 16px rgba(0,0,0,.3)
 }
+
 .call{
  background:#1976d2;
- animation:ring 1.5s infinite
+ animation:ring 1.5s infinite, pulse 2s infinite;
 }
 @keyframes ring{
  0%{transform:rotate(0)}
@@ -211,6 +221,12 @@ iframe{
  30%{transform:rotate(12deg)}
  40%{transform:rotate(0)}
 }
+@keyframes pulse{
+ 0%{box-shadow:0 0 0 0 rgba(25,118,210,.6)}
+ 70%{box-shadow:0 0 0 18px rgba(25,118,210,0)}
+ 100%{box-shadow:0 0 0 0 rgba(25,118,210,0)}
+}
+
 .whatsapp{background:#25D366}
 .instagram{
  background:radial-gradient(circle at 30% 110%,
@@ -222,6 +238,15 @@ footer{
  color:#fff;
  text-align:center;
  padding:15px
+}
+
+/* TIMETABLE ANIMATION */
+#timetable{
+ animation:fadeUp 1s ease both;
+}
+@keyframes fadeUp{
+ from{opacity:0;transform:translateY(40px)}
+ to{opacity:1;transform:translateY(0)}
 }
 </style>
 </head>
@@ -239,8 +264,8 @@ footer{
 
 <header>
  <img src="logo.png" alt="Logo">
- <h1>Best SSLC & PUC Coaching in Nagawara</h1>
- <p>Individual Attention • Proven Results • Affordable Fees</p>
+ <h1>Syed’s Challenging Tuition</h1>
+ <p>Even a laziest student can get good results</p>
 </header>
 
 <div class="notice">
@@ -257,10 +282,15 @@ footer{
 </div>
 </div>
 
-<!-- KEEPING ALL YOUR OLD SECTIONS BELOW EXACTLY SAME -->
-<!-- Courses, Timetable, Classroom Slider, Results Slider, Reviews, Contact, Map -->
+<!-- KEEP YOUR OTHER SECTIONS BELOW (Courses, Timetable, Sliders, Reviews, Contact, Map) EXACTLY SAME AS BEFORE -->
 
-<!-- (Keep the rest of your original body content unchanged) -->
+<script>
+fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vT9-v1cam9L1DaRbBrdoT-VzJvsJtWy6_aUH_lrna3KA3FMG2kd9C4DscxEqjTpMtnz3WzIxh5xp4TE/pub?output=csv")
+.then(r=>r.text())
+.then(t=>{
+ noticeText.innerText=t.split("\n").slice(1).join(" | ");
+});
+</script>
 
 </body>
 </html>
