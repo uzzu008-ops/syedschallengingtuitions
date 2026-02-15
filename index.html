@@ -100,11 +100,14 @@ header img{
 .slider-track{display:flex;transition:.6s ease}
 .slider img{
  width:100%;
- height:360px;
+ height:380px;
  object-fit:contain;
  background:#fff;
  flex-shrink:0;
  border-radius:14px
+}
+@media(max-width:768px){
+ .slider img{height:240px}
 }
 
 /* REVIEWS */
@@ -138,7 +141,7 @@ button{
 
 iframe{
  width:100%;
- height:320px;
+ height:340px;
  border:none;
  border-radius:14px
 }
@@ -164,7 +167,24 @@ iframe{
  box-shadow:0 6px 16px rgba(0,0,0,.3)
 }
 
-.call{background:#1976d2}
+/* CALL ANIMATION */
+.call{
+ background:#1976d2;
+ animation:ring 1.5s infinite, pulse 2s infinite;
+}
+@keyframes ring{
+ 0%{transform:rotate(0)}
+ 10%{transform:rotate(12deg)}
+ 20%{transform:rotate(-12deg)}
+ 30%{transform:rotate(12deg)}
+ 40%{transform:rotate(0)}
+}
+@keyframes pulse{
+ 0%{box-shadow:0 0 0 0 rgba(25,118,210,.6)}
+ 70%{box-shadow:0 0 0 18px rgba(25,118,210,0)}
+ 100%{box-shadow:0 0 0 0 rgba(25,118,210,0)}
+}
+
 .whatsapp{background:#25D366}
 .instagram{
  background:radial-gradient(circle at 30% 110%,
@@ -282,7 +302,7 @@ Personal attention • Concept clarity • Exam-focused teaching • Proven resu
 
 <script>
 
-/* NOTICE – FULL GOOGLE SHEET FETCH */
+/* NOTICE FULL FETCH */
 fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vT9-v1cam9L1DaRbBrdoT-VzJvsJtWy6_aUH_lrna3KA3FMG2kd9C4DscxEqjTpMtnz3WzIxh5xp4TE/pub?output=csv")
 .then(r=>r.text())
 .then(t=>{
@@ -290,7 +310,7 @@ fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vT9-v1cam9L1DaRbBrdoT-VzJ
  noticeText.innerText = rows.join("  |  ");
 });
 
-/* REVIEW – FULL GOOGLE SHEET FETCH */
+/* REVIEW FULL FETCH */
 fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vTXfT8B5Jo58GMQ4IXUdd2e0ws3zRo94oMrRqMYx6BKRgvdzhBaCnIuTu5tksMb-OqhAkAWjPO9aXtK/pub?output=csv")
 .then(r=>r.text())
 .then(t=>{
@@ -302,7 +322,7 @@ fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vTXfT8B5Jo58GMQ4IXUdd2e0w
  startReviewSlider();
 });
 
-/* SLIDER */
+/* IMAGE SLIDERS */
 function autoSlider(id,delay){
  const t=document.querySelector(`#${id} .slider-track`);
  let i=0;
